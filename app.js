@@ -86,22 +86,18 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-   // var sum4 = sum(testArray[0], testArray[1])[0];
-    //var sum5 = sum(sum4, testArray[2])[0];
-    //2,3,4 was passed in as an array of numbers, and 9 is their sum.
-    //var message4 = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sum5} is thier sum.`;
-   // return [sum5, message4];
-   var sum4=0;
-   var ms ='';
-   for (var i = 0; i < sumArr.length; i++){
-        sum4 = sum (sum4 , sumArr[i])[0];
-        ms = ms + sumArr[i] ;
-        if(i < sumArr.length-1){
-            ms = ms + ',';  
+
+    var sum4 = 0;
+    var ms = '';
+    for (var i = 0; i < sumArr.length; i++) {
+        sum4 = sum(sum4, sumArr[i])[0];
+        ms = ms + sumArr[i];
+        if (i < sumArr.length - 1) {
+            ms = ms + ',';
         }
-   }
-   var message4 = `${ms} was passed in as an array of numbers, and ${sum4} is their sum.`;
-   return [sum4,message4];
+    }
+    var message4 = `${ms} was passed in as an array of numbers, and ${sum4} is their sum.`;
+    return [sum4, message4];
 }
 testSumArray(testArray);
 // Here is the test for sumArray(); uncomment it to run it
@@ -122,8 +118,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var multi = 1;
+    var ma = '';
+    for (var i = 0; i < multArr.length; i++) {
+        multi = multiply(multi, multArr[i])[0];
+        ma = ma + multArr[i];
+        if (i < multArr.length - 1) {
+            ma = ma + ',';
+        }
+    }
+    var message5 = `The numbers ${ma} have a product of ${multi}.`;
+    return [multi, message5];
 }
+testMultiplyArray(testArray);
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
