@@ -36,7 +36,7 @@ function multiply(a, b) { //eslint-disable-line
     var message1 = `The product of ${a} and ${b} is ${theMultiply}.`;
     return [theMultiply, message1];
 }
-testMultiply()
+testMultiply(5, 9)
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -56,17 +56,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var sum2 = sum (a, b)[0];
-    var sum3 = sum (sum2, c)[0];
-    var multiply2 = multiply (a, b)[0];
-    var multiply3 = multiply (multiply2, c)[0];
+    var sum2 = sum(a, b)[0];
+    var sum3 = sum(sum2, c)[0];
+    var multiply2 = multiply(a, b)[0];
+    var multiply3 = multiply(multiply2, c)[0];
     //4 and 7 and 5 sum to 16.
     var message2 = `${a} and ${b} and ${c} sum to ${sum3}.`;
     //'The product of 4 and 7 and 5 is 140.'
     var message3 = `The product of ${a} and ${b} and ${c} is ${multiply3}.`;
     return [sum3, multiply3, message2, message3];
 }
-testSumAndMultiply()
+testSumAndMultiply(4, 7, 5)
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
 
@@ -86,9 +86,24 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+   // var sum4 = sum(testArray[0], testArray[1])[0];
+    //var sum5 = sum(sum4, testArray[2])[0];
+    //2,3,4 was passed in as an array of numbers, and 9 is their sum.
+    //var message4 = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sum5} is thier sum.`;
+   // return [sum5, message4];
+   var sum4=0;
+   var ms ='';
+   for (var i = 0; i < sumArr.length; i++){
+        sum4 = sum (sum4 , sumArr[i])[0];
+        ms = ms + sumArr[i] ;
+        if(i < sumArr.length-1){
+            ms = ms + ',';  
+        }
+   }
+   var message4 = `${ms} was passed in as an array of numbers, and ${sum4} is their sum.`;
+   return [sum4,message4];
 }
-
+testSumArray(testArray);
 // Here is the test for sumArray(); uncomment it to run it
 
 // testSumArray(testArray);
