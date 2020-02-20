@@ -158,9 +158,19 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+    var multii = 1;
+    var mas = '';
+    for (var i = 0; i < dynamicArray.length; i++){
+        multii = multiply(multii, dynamicArray[i])[0];
+        mas = mas + dynamicArray[i];
+        if (i < dynamicArray.length - 1) {
+            mas = mas + ',';
+        }
+    }
+    var massage6 = `The numbers ${mas} have a product of ${multii}.`;
+    return [multii, massage6];
 }
-
+testMultiplyAnyArray(testDynamicArray);
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
