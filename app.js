@@ -36,7 +36,7 @@ function multiply(a, b) { //eslint-disable-line
     var message1 = `The product of ${a} and ${b} is ${theMultiply}.`;
     return [theMultiply, message1];
 }
-testMultiply(5, 9)
+testMultiply()
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
